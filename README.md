@@ -8,7 +8,7 @@
 
 ## 分支
 
-- [main](https://github.com/Lmmmmmm-bb/Nest-Starter/tree/main) => NestJS + TypeOrm + Mysql + Swagger
+- **[main](https://github.com/Lmmmmmm-bb/Nest-Starter/tree/main) => NestJS + TypeOrm + Mysql + Swagger**
 - [open-api](https://github.com/Lmmmmmm-bb/Nest-Starter/tree/open-api) => NestJS + Swagger
 
 ## 目录结构
