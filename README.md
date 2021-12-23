@@ -1,73 +1,62 @@
+![Nest-Starter](https://socialify.git.ci/Lmmmmmm-bb/Nest-Mysql/image?description=1&language=1&theme=Light)
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+<a href="https://github.com/Lmmmmmm-bb/Nest-Mysql/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Lmmmmmm-bb/Nest-Mysql"></a>
+<a href="http://commitizen.github.io/cz-cli/"><img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" /></a>
+<a href="https://github.com/Lmmmmmm-bb/Nest-Mysql/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Lmmmmmm-bb/Nest-Mysql"></a>
+<a href="https://github.com/Lmmmmmm-bb/Nest-Starter/pulls"><img alt="GitHub PR" src="https://img.shields.io/badge/PR-Welcome-%2345A2FF" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 分支
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- [main](https://github.com/Lmmmmmm-bb/Nest-Starter/tree/main) => NestJS + TypeOrm + Mysql + Swagger
+- [open-api](https://github.com/Lmmmmmm-bb/Nest-Starter/tree/open-api) => NestJS + Swagger
 
-## Description
+## 目录结构
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
+```
+├── LICENSE
+├── README.md
+├── commitlint.config.ts          // commitlint 配置文件
+├── nest-cli.json
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app                       // 存放 App Module 相关文件的文件夹
+│   ├── common
+│   │   ├── decorators            // 存放装饰器的文件夹
+│   │   ├── filters               // 存放过滤器的文件夹
+│   │   ├── interceptors          // 存放拦截器的文件夹
+│   │   ├── middleware            // 存放中间件的文件夹
+│   │   └── pipes                 // 存放管道的文件夹
+│   ├── configs                   // 用来存放各种依赖的配置文件
+│   │   ├── swagger.config.ts     // Swagger 配置文件
+│   │   └── typeorm.config.ts     // TypeOrm 配置文件
+│   ├── constants                 // 存放常量的文件夹
+│   ├── main.ts                   // 应用主入口
+│   ├── modules                   // 存放各种 Module 的文件夹
+│   └── utils                     // 存放工具文件的文件夹
+├── tsconfig.build.json
+└── tsconfig.json
 ```
 
-## Running the app
+## 相关配置
 
-```bash
-# development
-$ npm run start
+### 数据库
 
-# watch mode
-$ npm run start:dev
+**初次使用时**请在 `/src/configs/typeorm.config.ts` 中修改数据库的相关参数，否则无法正常与数据库建立连接。
 
-# production mode
-$ npm run start:prod
-```
+Starter 使用了 Repository pattern，相关使用方式可查看 [官方文档](https://docs.nestjs.com/techniques/database#repository-pattern)。
 
-## Test
+### Swagger
 
-```bash
-# unit tests
-$ npm run test
+配置 Swagger 页面信息请在 `/src/configs/swagger.config.ts` 中进行配置。
 
-# e2e tests
-$ npm run test:e2e
+### CORS & CSRF
 
-# test coverage
-$ npm run test:cov
-```
+默认配置了跨域以及 CSRF，如需关闭请在 `/src/main.ts` 中将相应配置注释即可。
 
-## Support
+### commit 信息
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+已配置 commitlint，建议使用 `npm run commit` 进行代码提交。
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+提交信息可在 `.cz-config.js` 中进行配置
