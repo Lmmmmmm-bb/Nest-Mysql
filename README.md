@@ -18,8 +18,8 @@
 ├── README.md
 ├── commitlint.config.ts          // commitlint 配置文件
 ├── nest-cli.json
-├── package-lock.json
 ├── package.json
+├── pnpm-lock.yaml
 ├── src
 │   ├── app                       // 存放 App Module 相关文件的文件夹
 │   ├── common
@@ -43,20 +43,16 @@
 
 ### 数据库
 
-**初次使用时**请在 `/src/configs/typeorm.config.ts` 中修改数据库的相关参数，否则无法正常与数据库建立连接。
+本地创建 `.env.local` 文件，并配置如下：
+```
+MYSQL_HOST=
+MYSQL_USER=
+MYSQL_PASSWORD=
 
-Starter 使用了 Repository pattern，相关使用方式可查看 [官方文档](https://docs.nestjs.com/techniques/database#repository-pattern)。
+MYSQL_PORT=
+MYSQL_DATABASE=
+```
 
 ### Swagger
 
 配置 Swagger 页面信息请在 `/src/configs/swagger.config.ts` 中进行配置。
-
-### CORS & CSRF
-
-默认配置了跨域以及 CSRF，如需关闭请在 `/src/main.ts` 中将相应配置注释即可。
-
-### commit 信息
-
-已配置 commitlint，建议使用 `npm run commit` 进行代码提交。
-
-提交信息可在 `.cz-config.js` 中进行配置
